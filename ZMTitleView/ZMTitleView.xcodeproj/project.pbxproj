@@ -7,35 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		86CB498E2977EEFA005DA90F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CB498D2977EEFA005DA90F /* AppDelegate.m */; };
-		86CB49912977EEFA005DA90F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CB49902977EEFA005DA90F /* SceneDelegate.m */; };
-		86CB49942977EEFA005DA90F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CB49932977EEFA005DA90F /* ViewController.m */; };
-		86CB49972977EEFA005DA90F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86CB49952977EEFA005DA90F /* Main.storyboard */; };
-		86CB49992977EEFB005DA90F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86CB49982977EEFB005DA90F /* Assets.xcassets */; };
-		86CB499C2977EEFB005DA90F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86CB499A2977EEFB005DA90F /* LaunchScreen.storyboard */; };
-		86CB499F2977EEFB005DA90F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CB499E2977EEFB005DA90F /* main.m */; };
-		86CB49A72977EF0D005DA90F /* ZMTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CB49A62977EF0D005DA90F /* ZMTitleView.m */; };
+		86F6C85C297B793600AAC010 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F6C85B297B793600AAC010 /* AppDelegate.m */; };
+		86F6C85F297B793600AAC010 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F6C85E297B793600AAC010 /* SceneDelegate.m */; };
+		86F6C865297B793600AAC010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6C863297B793600AAC010 /* Main.storyboard */; };
+		86F6C867297B793600AAC010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86F6C866297B793600AAC010 /* Assets.xcassets */; };
+		86F6C86A297B793600AAC010 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6C868297B793600AAC010 /* LaunchScreen.storyboard */; };
+		86F6C86D297B793600AAC010 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F6C86C297B793600AAC010 /* main.m */; };
+		86F6C877297B798700AAC010 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F6C874297B798700AAC010 /* ViewController.m */; };
+		86F6C878297B798700AAC010 /* ZMTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F6C875297B798700AAC010 /* ZMTitleView.m */; };
+		86F6C87B297B885600AAC010 /* ZMPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F6C87A297B885600AAC010 /* ZMPageView.m */; };
+		86F6C87E297CC77000AAC010 /* SubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F6C87D297CC77000AAC010 /* SubViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		86CB49892977EEFA005DA90F /* ZMTitleView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMTitleView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		86CB498C2977EEFA005DA90F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		86CB498D2977EEFA005DA90F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		86CB498F2977EEFA005DA90F /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		86CB49902977EEFA005DA90F /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		86CB49922977EEFA005DA90F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		86CB49932977EEFA005DA90F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		86CB49962977EEFA005DA90F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		86CB49982977EEFB005DA90F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		86CB499B2977EEFB005DA90F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		86CB499D2977EEFB005DA90F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86CB499E2977EEFB005DA90F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		86CB49A52977EF0D005DA90F /* ZMTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMTitleView.h; sourceTree = "<group>"; };
-		86CB49A62977EF0D005DA90F /* ZMTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMTitleView.m; sourceTree = "<group>"; };
+		86F6C857297B793600AAC010 /* ZMTitleView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMTitleView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86F6C85A297B793600AAC010 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		86F6C85B297B793600AAC010 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		86F6C85D297B793600AAC010 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		86F6C85E297B793600AAC010 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		86F6C864297B793600AAC010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		86F6C866297B793600AAC010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86F6C869297B793600AAC010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		86F6C86B297B793600AAC010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86F6C86C297B793600AAC010 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		86F6C873297B798700AAC010 /* ZMTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTitleView.h; sourceTree = "<group>"; };
+		86F6C874297B798700AAC010 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		86F6C875297B798700AAC010 /* ZMTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTitleView.m; sourceTree = "<group>"; };
+		86F6C876297B798700AAC010 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		86F6C879297B885600AAC010 /* ZMPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMPageView.h; sourceTree = "<group>"; };
+		86F6C87A297B885600AAC010 /* ZMPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMPageView.m; sourceTree = "<group>"; };
+		86F6C87C297CC77000AAC010 /* SubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubViewController.h; sourceTree = "<group>"; };
+		86F6C87D297CC77000AAC010 /* SubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		86CB49862977EEFA005DA90F /* Frameworks */ = {
+		86F6C854297B793600AAC010 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,38 +51,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		86CB49802977EEFA005DA90F = {
+		86F6C84E297B793600AAC010 = {
 			isa = PBXGroup;
 			children = (
-				86CB498B2977EEFA005DA90F /* ZMTitleView */,
-				86CB498A2977EEFA005DA90F /* Products */,
+				86F6C859297B793600AAC010 /* ZMTitleView */,
+				86F6C858297B793600AAC010 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		86CB498A2977EEFA005DA90F /* Products */ = {
+		86F6C858297B793600AAC010 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86CB49892977EEFA005DA90F /* ZMTitleView.app */,
+				86F6C857297B793600AAC010 /* ZMTitleView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		86CB498B2977EEFA005DA90F /* ZMTitleView */ = {
+		86F6C859297B793600AAC010 /* ZMTitleView */ = {
 			isa = PBXGroup;
 			children = (
-				86CB49A52977EF0D005DA90F /* ZMTitleView.h */,
-				86CB49A62977EF0D005DA90F /* ZMTitleView.m */,
-				86CB498C2977EEFA005DA90F /* AppDelegate.h */,
-				86CB498D2977EEFA005DA90F /* AppDelegate.m */,
-				86CB498F2977EEFA005DA90F /* SceneDelegate.h */,
-				86CB49902977EEFA005DA90F /* SceneDelegate.m */,
-				86CB49922977EEFA005DA90F /* ViewController.h */,
-				86CB49932977EEFA005DA90F /* ViewController.m */,
-				86CB49952977EEFA005DA90F /* Main.storyboard */,
-				86CB49982977EEFB005DA90F /* Assets.xcassets */,
-				86CB499A2977EEFB005DA90F /* LaunchScreen.storyboard */,
-				86CB499D2977EEFB005DA90F /* Info.plist */,
-				86CB499E2977EEFB005DA90F /* main.m */,
+				86F6C876297B798700AAC010 /* ViewController.h */,
+				86F6C874297B798700AAC010 /* ViewController.m */,
+				86F6C87C297CC77000AAC010 /* SubViewController.h */,
+				86F6C87D297CC77000AAC010 /* SubViewController.m */,
+				86F6C873297B798700AAC010 /* ZMTitleView.h */,
+				86F6C875297B798700AAC010 /* ZMTitleView.m */,
+				86F6C85A297B793600AAC010 /* AppDelegate.h */,
+				86F6C85B297B793600AAC010 /* AppDelegate.m */,
+				86F6C879297B885600AAC010 /* ZMPageView.h */,
+				86F6C87A297B885600AAC010 /* ZMPageView.m */,
+				86F6C85D297B793600AAC010 /* SceneDelegate.h */,
+				86F6C85E297B793600AAC010 /* SceneDelegate.m */,
+				86F6C863297B793600AAC010 /* Main.storyboard */,
+				86F6C866297B793600AAC010 /* Assets.xcassets */,
+				86F6C868297B793600AAC010 /* LaunchScreen.storyboard */,
+				86F6C86B297B793600AAC010 /* Info.plist */,
+				86F6C86C297B793600AAC010 /* main.m */,
 			);
 			path = ZMTitleView;
 			sourceTree = "<group>";
@@ -84,13 +94,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		86CB49882977EEFA005DA90F /* ZMTitleView */ = {
+		86F6C856297B793600AAC010 /* ZMTitleView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86CB49A22977EEFB005DA90F /* Build configuration list for PBXNativeTarget "ZMTitleView" */;
+			buildConfigurationList = 86F6C870297B793600AAC010 /* Build configuration list for PBXNativeTarget "ZMTitleView" */;
 			buildPhases = (
-				86CB49852977EEFA005DA90F /* Sources */,
-				86CB49862977EEFA005DA90F /* Frameworks */,
-				86CB49872977EEFA005DA90F /* Resources */,
+				86F6C853297B793600AAC010 /* Sources */,
+				86F6C854297B793600AAC010 /* Frameworks */,
+				86F6C855297B793600AAC010 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -98,24 +108,24 @@
 			);
 			name = ZMTitleView;
 			productName = ZMTitleView;
-			productReference = 86CB49892977EEFA005DA90F /* ZMTitleView.app */;
+			productReference = 86F6C857297B793600AAC010 /* ZMTitleView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		86CB49812977EEFA005DA90F /* Project object */ = {
+		86F6C84F297B793600AAC010 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					86CB49882977EEFA005DA90F = {
+					86F6C856297B793600AAC010 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 86CB49842977EEFA005DA90F /* Build configuration list for PBXProject "ZMTitleView" */;
+			buildConfigurationList = 86F6C852297B793600AAC010 /* Build configuration list for PBXProject "ZMTitleView" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -123,57 +133,59 @@
 				en,
 				Base,
 			);
-			mainGroup = 86CB49802977EEFA005DA90F;
-			productRefGroup = 86CB498A2977EEFA005DA90F /* Products */;
+			mainGroup = 86F6C84E297B793600AAC010;
+			productRefGroup = 86F6C858297B793600AAC010 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				86CB49882977EEFA005DA90F /* ZMTitleView */,
+				86F6C856297B793600AAC010 /* ZMTitleView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		86CB49872977EEFA005DA90F /* Resources */ = {
+		86F6C855297B793600AAC010 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86CB499C2977EEFB005DA90F /* LaunchScreen.storyboard in Resources */,
-				86CB49992977EEFB005DA90F /* Assets.xcassets in Resources */,
-				86CB49972977EEFA005DA90F /* Main.storyboard in Resources */,
+				86F6C86A297B793600AAC010 /* LaunchScreen.storyboard in Resources */,
+				86F6C867297B793600AAC010 /* Assets.xcassets in Resources */,
+				86F6C865297B793600AAC010 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		86CB49852977EEFA005DA90F /* Sources */ = {
+		86F6C853297B793600AAC010 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86CB49942977EEFA005DA90F /* ViewController.m in Sources */,
-				86CB49A72977EF0D005DA90F /* ZMTitleView.m in Sources */,
-				86CB498E2977EEFA005DA90F /* AppDelegate.m in Sources */,
-				86CB499F2977EEFB005DA90F /* main.m in Sources */,
-				86CB49912977EEFA005DA90F /* SceneDelegate.m in Sources */,
+				86F6C87B297B885600AAC010 /* ZMPageView.m in Sources */,
+				86F6C85C297B793600AAC010 /* AppDelegate.m in Sources */,
+				86F6C878297B798700AAC010 /* ZMTitleView.m in Sources */,
+				86F6C86D297B793600AAC010 /* main.m in Sources */,
+				86F6C87E297CC77000AAC010 /* SubViewController.m in Sources */,
+				86F6C877297B798700AAC010 /* ViewController.m in Sources */,
+				86F6C85F297B793600AAC010 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		86CB49952977EEFA005DA90F /* Main.storyboard */ = {
+		86F6C863297B793600AAC010 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				86CB49962977EEFA005DA90F /* Base */,
+				86F6C864297B793600AAC010 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		86CB499A2977EEFB005DA90F /* LaunchScreen.storyboard */ = {
+		86F6C868297B793600AAC010 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				86CB499B2977EEFB005DA90F /* Base */,
+				86F6C869297B793600AAC010 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -181,7 +193,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		86CB49A02977EEFB005DA90F /* Debug */ = {
+		86F6C86E297B793600AAC010 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -239,7 +251,7 @@
 			};
 			name = Debug;
 		};
-		86CB49A12977EEFB005DA90F /* Release */ = {
+		86F6C86F297B793600AAC010 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -291,13 +303,14 @@
 			};
 			name = Release;
 		};
-		86CB49A32977EEFB005DA90F /* Debug */ = {
+		86F6C871297B793600AAC010 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L637P2D758;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZMTitleView/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -317,13 +330,14 @@
 			};
 			name = Debug;
 		};
-		86CB49A42977EEFB005DA90F /* Release */ = {
+		86F6C872297B793600AAC010 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L637P2D758;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZMTitleView/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -346,25 +360,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		86CB49842977EEFA005DA90F /* Build configuration list for PBXProject "ZMTitleView" */ = {
+		86F6C852297B793600AAC010 /* Build configuration list for PBXProject "ZMTitleView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				86CB49A02977EEFB005DA90F /* Debug */,
-				86CB49A12977EEFB005DA90F /* Release */,
+				86F6C86E297B793600AAC010 /* Debug */,
+				86F6C86F297B793600AAC010 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86CB49A22977EEFB005DA90F /* Build configuration list for PBXNativeTarget "ZMTitleView" */ = {
+		86F6C870297B793600AAC010 /* Build configuration list for PBXNativeTarget "ZMTitleView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				86CB49A32977EEFB005DA90F /* Debug */,
-				86CB49A42977EEFB005DA90F /* Release */,
+				86F6C871297B793600AAC010 /* Debug */,
+				86F6C872297B793600AAC010 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 86CB49812977EEFA005DA90F /* Project object */;
+	rootObject = 86F6C84F297B793600AAC010 /* Project object */;
 }

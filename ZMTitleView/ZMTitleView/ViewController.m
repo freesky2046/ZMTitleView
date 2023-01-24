@@ -8,40 +8,67 @@
 #import "ViewController.h"
 #import "ZMPageView.h"
 #import "SubViewController.h"
+#import "ZMMainTableView.h"
 
-@interface ViewController ()<ZMTitleViewDelegate, ZMPageViewDelegate>
+@interface ViewController ()<ZMTitleViewDelegate, ZMPageViewDelegate, UITableViewDelegate, UITableViewDataSource, SubViewControllerDelegate>
 
+@property (nonatomic, strong) ZMMainTableView *mainTableView;
 @property (nonatomic, strong) ZMTitleView *titleView;
 @property (nonatomic, strong) ZMPageView *pageView;
-
+@property (nonatomic, assign) BOOL mainCanScroll;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   NSArray *titles =  @[@"11",@"22",@"33",
-                                                                                                                                        @"44",@"55",@"66",
-                                                                                                                                        @"77",@"88",@"99",
-                                                                                                                                        @"100",@"111"
-                                                                                                                                        
-   ];
+    
+    ZMMainTableView *tableView = [[ZMMainTableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.showsVerticalScrollIndicator = NO;
+    tableView.showsHorizontalScrollIndicator = NO;
+    tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [self.view addSubview:tableView];
+    self.mainTableView = tableView;
+    
+    UIView *headerView  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [self titleViewHeight] + [self imageViewHeight])];
+    headerView.backgroundColor = [UIColor clearColor];
+    tableView.tableHeaderView = headerView;
+    
+    UIImageView  *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [self imageViewHeight])];
+    imageView.backgroundColor = [UIColor grayColor];
+    [headerView addSubview:imageView];
+
+   NSArray *titles =  @[@"11",@"22",@"33"];
     ZMTitleView *titleView = [[ZMTitleView alloc] initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 44) title:titles];
     titleView.delegate = self;
     titleView.itemMargin = 30;
-    [self.view addSubview:titleView];
+    [headerView addSubview:titleView];
     self.titleView = titleView;
 
     NSMutableArray *vcs = [NSMutableArray array];
     for (NSString *title in titles) {
-        UIViewController *vc = [[SubViewController alloc] init];
-        vc.view.backgroundColor = [self  randomColor];
+        SubViewController *vc = [[SubViewController alloc] init];
+        vc.delegate = self;
         [vcs addObject:vc];
      }
-    ZMPageView *pageView = [[ZMPageView alloc] initWithFrame:CGRectMake(0, titleView.frame.size.height + titleView.frame.origin.y, [UIScreen mainScreen].bounds.size.width, 400) viewControllers:vcs parentController:self];
-    [self.view addSubview:pageView];
+    ZMPageView *pageView = [[ZMPageView alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - [self titleViewHeight]) viewControllers:vcs parentController:self];
     pageView.delegate = self;
     self.pageView = pageView;
+    self.mainCanScroll = YES;
+    tableView.noSimultaneouslyView = pageView.collectionView;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"父 viewWillAppear");
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"父 viewDidAppear");
 }
 
 - (void)titleViewWillBeginDrag:(ZMTitleView *)titleView {
@@ -63,15 +90,72 @@
     NSLog(@"from %ld", fromIndex);
     NSLog(@"to %ld", toIndex);
     self.titleView.selectedIndex = toIndex;
+}
+
+- (CGFloat)subPageHeight {
+    return [UIScreen mainScreen].bounds.size.height  ;
+}
+
+- (CGFloat)titleViewHeight {
+    return 40;
+}
+
+- (CGFloat)imageViewHeight {
+    return 100;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [UIScreen mainScreen].bounds.size.height - [self titleViewHeight];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    if(self.pageView.superview == nil) {
+        [cell.contentView addSubview:self.pageView];
+    }
+    return cell;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(scrollView == self.mainTableView) {
+        if(!self.mainCanScroll) {
+            self.mainTableView.contentOffset = CGPointMake(0, [self imageViewHeight]); // 阶段2.3
+        }
+        else if (self.mainTableView.contentOffset.y >= [self imageViewHeight]) { // 阶段2.1
+            self.mainTableView.contentOffset = CGPointMake(0, [self imageViewHeight]);
+            self.mainCanScroll = NO;
+        }else {
+            /// 阶段1.1
+        }
+    }else {
+        if(self.mainCanScroll) {
+            self.subTableView.contentOffset = CGPointMake(0, 0); /// 阶段1.2
+        }
+        else if (self.subTableView.contentOffset.y <= 0) { /// 阶段3
+            self.mainCanScroll = YES;
+        }else {
+             /// 阶段 2.2
+        }
+    }
+    if(self.mainCanScroll) {
+        NSLog(@"111主可以");
+    }else {
+        NSLog(@"222主不可以");
+    }
 
 }
 
-- (UIColor *)randomColor  {
-    CGFloat red = arc4random() % 255;
-    CGFloat green = arc4random() % 255;
-    CGFloat blue = arc4random() % 255;
-    UIColor *color = [UIColor colorWithRed:red/255.f green:green/255.f blue:blue/255.f alpha:1];
-    return color;
+- (void)subViewControllerDidScroll:(UIScrollView *)scrollView {
+    [self scrollViewDidScroll:scrollView];
+}
+
+- (UITableView *)subTableView {
+   SubViewController *sub = (SubViewController *)[self.pageView currentVC];
+    return sub.tableView;
 }
 
 @end

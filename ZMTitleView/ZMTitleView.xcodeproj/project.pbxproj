@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8632D310297E1AA300F0CD08 /* ZMMainTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8632D30F297E1AA300F0CD08 /* ZMMainTableView.m */; };
 		86F6C85C297B793600AAC010 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F6C85B297B793600AAC010 /* AppDelegate.m */; };
 		86F6C85F297B793600AAC010 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F6C85E297B793600AAC010 /* SceneDelegate.m */; };
 		86F6C865297B793600AAC010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86F6C863297B793600AAC010 /* Main.storyboard */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8632D30E297E1AA300F0CD08 /* ZMMainTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMainTableView.h; sourceTree = "<group>"; };
+		8632D30F297E1AA300F0CD08 /* ZMMainTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMainTableView.m; sourceTree = "<group>"; };
 		86F6C857297B793600AAC010 /* ZMTitleView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZMTitleView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F6C85A297B793600AAC010 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		86F6C85B297B793600AAC010 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,16 +73,18 @@
 		86F6C859297B793600AAC010 /* ZMTitleView */ = {
 			isa = PBXGroup;
 			children = (
-				86F6C876297B798700AAC010 /* ViewController.h */,
-				86F6C874297B798700AAC010 /* ViewController.m */,
+				8632D30E297E1AA300F0CD08 /* ZMMainTableView.h */,
+				8632D30F297E1AA300F0CD08 /* ZMMainTableView.m */,
+				86F6C879297B885600AAC010 /* ZMPageView.h */,
+				86F6C87A297B885600AAC010 /* ZMPageView.m */,
 				86F6C87C297CC77000AAC010 /* SubViewController.h */,
 				86F6C87D297CC77000AAC010 /* SubViewController.m */,
+				86F6C876297B798700AAC010 /* ViewController.h */,
+				86F6C874297B798700AAC010 /* ViewController.m */,
 				86F6C873297B798700AAC010 /* ZMTitleView.h */,
 				86F6C875297B798700AAC010 /* ZMTitleView.m */,
 				86F6C85A297B793600AAC010 /* AppDelegate.h */,
 				86F6C85B297B793600AAC010 /* AppDelegate.m */,
-				86F6C879297B885600AAC010 /* ZMPageView.h */,
-				86F6C87A297B885600AAC010 /* ZMPageView.m */,
 				86F6C85D297B793600AAC010 /* SceneDelegate.h */,
 				86F6C85E297B793600AAC010 /* SceneDelegate.m */,
 				86F6C863297B793600AAC010 /* Main.storyboard */,
@@ -164,6 +169,7 @@
 				86F6C87B297B885600AAC010 /* ZMPageView.m in Sources */,
 				86F6C85C297B793600AAC010 /* AppDelegate.m in Sources */,
 				86F6C878297B798700AAC010 /* ZMTitleView.m in Sources */,
+				8632D310297E1AA300F0CD08 /* ZMMainTableView.m in Sources */,
 				86F6C86D297B793600AAC010 /* main.m in Sources */,
 				86F6C87E297CC77000AAC010 /* SubViewController.m in Sources */,
 				86F6C877297B798700AAC010 /* ViewController.m in Sources */,

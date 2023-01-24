@@ -7,11 +7,19 @@
 
 #import "ZMPageView.h"
 
+typedef enum : NSUInteger {
+    ZMPageViewDragRight,
+    ZMPageViewDragLeft,
+    ZMPageViewDragBack,
+} ZMPageViewDragDirection;
+
 @interface ZMPageView ()<UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, weak) UIViewController *parentViewController;
 @property (nonatomic, strong) NSArray<UIViewController *> *childVC;
+@property (nonatomic, assign) BOOL isManualDrag; // 当前是否是手动滑动
+@property (nonatomic, assign) CGFloat lastOffsetX; // 上一个偏移值
 
 @end
 
@@ -41,6 +49,7 @@
 - (void)setSelectedIndex:(NSInteger)selectedIndex {
     if(selectedIndex < self.childVC.count && selectedIndex >= 0) {
         _selectedIndex = selectedIndex;
+        self.isManualDrag = NO;
         [self.collectionView setContentOffset:CGPointMake(self.collectionView.frame.size.width * selectedIndex, 0) animated:NO];
     }
 }
@@ -99,9 +108,47 @@
     }
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    self.isManualDrag = YES;
+    self.lastOffsetX = scrollView.contentOffset.x;
+    
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(!self.isManualDrag){
+        return;
+    }
+    if(self.dragDirection == ZMPageViewDragRight) {
+        NSLog(@"右边");
+        NSInteger fromIndex = floor(self.lastOffsetX/scrollView.bounds.size.width);
+        NSInteger toIndex = fromIndex + 1;
+        toIndex = MIN(toIndex, self.childVC.count - 1);
+        CGFloat progress =  (scrollView.contentOffset.x - self.lastOffsetX) / scrollView.bounds.size.width;
+        if([self.delegate respondsToSelector:@selector(pageViewDidScroll:startIndex:toIndex:progress:)]){
+            [self.delegate pageViewDidScroll:self startIndex:fromIndex toIndex:toIndex progress:progress];
+        }
+    }
+    else if(self.dragDirection == ZMPageViewDragLeft) {
+        NSLog(@"左边");
+    }else {
+        NSLog(@"返回");
+    }
+}
+
+- (ZMPageViewDragDirection)dragDirection {
+    
+    if(self.collectionView.contentOffset.x - self.lastOffsetX > 0) {
+        return ZMPageViewDragRight;
+    }
+    else if (self.collectionView.contentOffset.x - self.lastOffsetX < 0) {
+        return ZMPageViewDragLeft;
+    }
+    return ZMPageViewDragBack;
+}
+
 - (void)scrollViewDidEnd {
     CGFloat contentOffsetX = self.collectionView.contentOffset.x;
-    NSInteger index = (contentOffsetX / self.collectionView.frame.size.width);
+    NSInteger index = floor(contentOffsetX / self.collectionView.frame.size.width);
     index = MAX(index, 0);
     index = MIN(index, self.childVC.count - 1);
     if(index != _selectedIndex) {
@@ -110,6 +157,11 @@
         }
         _selectedIndex = index;
     }
+}
+
+- (UIViewController *)currentVC {
+   UIViewController *vc = self.childVC[self.selectedIndex];
+    return vc;
 }
 
 @end

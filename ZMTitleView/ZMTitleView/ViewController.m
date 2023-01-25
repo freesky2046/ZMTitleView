@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     ZMMainTableView *tableView = [[ZMMainTableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -141,12 +141,6 @@
              /// 阶段 2.2
         }
     }
-    if(self.mainCanScroll) {
-        NSLog(@"111主可以");
-    }else {
-        NSLog(@"222主不可以");
-    }
-
 }
 
 - (void)subViewControllerDidScroll:(UIScrollView *)scrollView {

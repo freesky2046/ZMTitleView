@@ -16,6 +16,7 @@
 @property (nonatomic, strong) ZMTitleView *titleView;
 @property (nonatomic, strong) ZMPageView *pageView;
 @property (nonatomic, assign) BOOL mainCanScroll;
+@property (nonatomic, assign) BOOL subCanScroll;
 @end
 
 @implementation ViewController
@@ -123,22 +124,25 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if(scrollView == self.mainTableView) {
         if(!self.mainCanScroll) {
-            self.mainTableView.contentOffset = CGPointMake(0, [self imageViewHeight]); // 阶段2.3
+            self.mainTableView.contentOffset = CGPointMake(0, [self imageViewHeight]);
+            self.subCanScroll = YES;
         }
-        else if (self.mainTableView.contentOffset.y >= [self imageViewHeight]) { // 阶段2.1
+        else if (self.mainTableView.contentOffset.y >= [self imageViewHeight]) {
             self.mainTableView.contentOffset = CGPointMake(0, [self imageViewHeight]);
             self.mainCanScroll = NO;
+            self.subCanScroll = YES;
         }else {
-            /// 阶段1.1
+           
         }
     }else {
-        if(self.mainCanScroll) {
-            self.subTableView.contentOffset = CGPointMake(0, 0); /// 阶段1.2
+        if(!self.subCanScroll) {
+            self.subTableView.contentOffset = CGPointMake(0, 0);
         }
-        else if (self.subTableView.contentOffset.y <= 0) { /// 阶段3
+        else if (self.subTableView.contentOffset.y <= 0) {
             self.mainCanScroll = YES;
+            self.subCanScroll = NO;
         }else {
-             /// 阶段 2.2
+            
         }
     }
 }

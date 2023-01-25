@@ -11,12 +11,10 @@
 #import "ZMMainTableView.h"
 
 @interface ViewController ()<ZMTitleViewDelegate, ZMPageViewDelegate, UITableViewDelegate, UITableViewDataSource, SubViewControllerDelegate>
-
-@property (nonatomic, strong) ZMMainTableView *mainTableView;
-@property (nonatomic, strong) ZMTitleView *titleView;
-@property (nonatomic, strong) ZMPageView *pageView;
+@property (nonatomic, strong) ZMMainTableView *mainTableView;  ///
+@property (nonatomic, strong) ZMTitleView *titleView;          ///  
+@property (nonatomic, strong) ZMPageView *pageView;            /// 方便可以访问
 @property (nonatomic, assign) BOOL mainCanScroll;
-@property (nonatomic, assign) BOOL subCanScroll;
 @end
 
 @implementation ViewController
@@ -122,25 +120,26 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    SubViewController *sub = (SubViewController *)[self.pageView currentVC];
     if(scrollView == self.mainTableView) {
         if(!self.mainCanScroll) {
             self.mainTableView.contentOffset = CGPointMake(0, [self imageViewHeight]);
-            self.subCanScroll = YES;
+            sub.subCanScroll = YES;
         }
         else if (self.mainTableView.contentOffset.y >= [self imageViewHeight]) {
             self.mainTableView.contentOffset = CGPointMake(0, [self imageViewHeight]);
             self.mainCanScroll = NO;
-            self.subCanScroll = YES;
+            sub.subCanScroll = YES;
         }else {
            
         }
     }else {
-        if(!self.subCanScroll) {
+        if(!sub.subCanScroll) {
             self.subTableView.contentOffset = CGPointMake(0, 0);
         }
         else if (self.subTableView.contentOffset.y <= 0) {
             self.mainCanScroll = YES;
-            self.subCanScroll = NO;
+            sub.subCanScroll = NO;
         }else {
             
         }

@@ -57,6 +57,8 @@
 		8632D31129800F6000F0CD08 /* PageView */ = {
 			isa = PBXGroup;
 			children = (
+				86F6C873297B798700AAC010 /* ZMTitleView.h */,
+				86F6C875297B798700AAC010 /* ZMTitleView.m */,
 				8632D30E297E1AA300F0CD08 /* ZMMainTableView.h */,
 				8632D30F297E1AA300F0CD08 /* ZMMainTableView.m */,
 				86F6C879297B885600AAC010 /* ZMPageView.h */,
@@ -89,8 +91,6 @@
 				8632D31129800F6000F0CD08 /* PageView */,
 				86F6C876297B798700AAC010 /* ViewController.h */,
 				86F6C874297B798700AAC010 /* ViewController.m */,
-				86F6C873297B798700AAC010 /* ZMTitleView.h */,
-				86F6C875297B798700AAC010 /* ZMTitleView.m */,
 				86F6C85A297B793600AAC010 /* AppDelegate.h */,
 				86F6C85B297B793600AAC010 /* AppDelegate.m */,
 				86F6C85D297B793600AAC010 /* SceneDelegate.h */,

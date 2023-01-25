@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) UITableView *tableView;
 @property (nonatomic, weak) id<SubViewControllerDelegate> delegate;
+@property (nonatomic, assign) BOOL subCanScroll;
 
 @end
 

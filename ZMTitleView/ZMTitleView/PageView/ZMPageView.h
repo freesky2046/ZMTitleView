@@ -9,11 +9,10 @@
 
 @class  ZMPageView;
 @protocol ZMPageViewDelegate <NSObject>
-
+@optional;
 - (void)pageViewDidChangeFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
 - (void)pageViewDidScroll:(ZMPageView *)pageView
                startIndex:(NSInteger)startIndex toIndex:(NSInteger)toIndex progress:(CGFloat)progress;
-
 @end
 
 

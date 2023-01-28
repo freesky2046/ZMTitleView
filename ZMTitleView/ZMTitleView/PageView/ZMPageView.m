@@ -108,10 +108,13 @@ typedef enum : NSUInteger {
     }
 }
 
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    NSLog(@".....");
+}
+
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     self.isManualDrag = YES;
     self.lastOffsetX = scrollView.contentOffset.x;
-    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
